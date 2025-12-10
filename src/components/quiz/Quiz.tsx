@@ -1,9 +1,10 @@
 import { useState, useCallback } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { quizQuestions } from "@/data/quizData";
 import StartScreen from "./StartScreen";
 import QuestionScreen from "./QuestionScreen";
 import ResultScreen from "./ResultScreen";
+import catPalmPlant from "@/assets/cat-palm-plant.png";
 
 type QuizState = "start" | "quiz" | "result";
 
@@ -92,6 +93,17 @@ const Quiz = () => {
           />
         )}
       </AnimatePresence>
+
+      {/* Cat Palm Plant Animation - Always visible */}
+      <motion.img
+        src={catPalmPlant}
+        alt="Decorative cat palm plant"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+        className="fixed bottom-0 left-4 h-48 md:h-64 lg:h-80 pointer-events-none object-contain"
+        style={{ filter: "drop-shadow(0 4px 6px rgba(0,0,0,0.1))" }}
+      />
     </main>
   );
 };

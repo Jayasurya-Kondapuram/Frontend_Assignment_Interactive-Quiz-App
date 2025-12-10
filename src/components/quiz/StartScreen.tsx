@@ -12,12 +12,15 @@ const StartScreen = ({ onStart, totalQuestions }: StartScreenProps) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5 }}
-      className="quiz-card text-center"
+      className="quiz-card text-center relative z-10"
     >
       <header>
-        <h1 className="quiz-title mb-8">
+        <h1 className="quiz-title mb-2">
           Test Your <span className="quiz-title-italic">Knowledge</span>
         </h1>
+        <p className="text-muted-foreground font-sans text-sm mb-8">
+          Answer all the questions to see the results
+        </p>
       </header>
 
       <motion.div
