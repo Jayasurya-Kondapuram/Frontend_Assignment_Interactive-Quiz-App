@@ -2,87 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Quiz App Design System */
+    --background: 187 33% 94%;
+    --foreground: 197 54% 23%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 197 54% 23%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 197 54% 23%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 197 54% 23%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 187 33% 90%;
+    --secondary-foreground: 197 54% 23%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 187 25% 88%;
+    --muted-foreground: 197 30% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 197 54% 23%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 197 30% 75%;
+    --input: 197 30% 75%;
+    --ring: 197 54% 23%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Quiz Colors */
+    --quiz-teal: 197 54% 23%;
+    --quiz-teal-light: 197 45% 35%;
+    --quiz-bg: 187 33% 94%;
+    --quiz-card: 0 0% 100%;
+    --quiz-gold: 45 100% 51%;
+    --quiz-gold-light: 45 95% 65%;
+
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsl(197 54% 23% / 0.1);
+    --shadow-button: 0 4px 14px -4px hsl(197 54% 23% / 0.25);
+    --shadow-hover: 0 8px 30px -4px hsl(197 54% 23% / 0.2);
+
+    /* Transitions */
+    --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
+    --background: 197 54% 10%;
+    --foreground: 187 33% 94%;
+    --card: 197 45% 15%;
+    --card-foreground: 187 33% 94%;
+    --popover: 197 45% 15%;
+    --popover-foreground: 187 33% 94%;
+    --primary: 187 33% 94%;
+    --primary-foreground: 197 54% 23%;
+    --secondary: 197 40% 20%;
+    --secondary-foreground: 187 33% 94%;
+    --muted: 197 40% 20%;
+    --muted-foreground: 187 25% 65%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 197 54% 23%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 197 40% 25%;
+    --input: 197 40% 25%;
+    --ring: 187 33% 80%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +99,172 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Libre Baskerville', serif;
+  }
+}
+
+@layer components {
+  .quiz-container {
+    @apply min-h-screen flex items-center justify-center p-4;
+    background: linear-gradient(135deg, hsl(var(--quiz-bg)) 0%, hsl(187 40% 90%) 100%);
+  }
+
+  .quiz-card {
+    @apply bg-card rounded-2xl p-8 md:p-12;
+    box-shadow: var(--shadow-card);
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .quiz-title {
+    @apply text-2xl md:text-3xl font-bold text-center mb-8;
+    color: hsl(var(--quiz-teal));
+  }
+
+  .quiz-title-italic {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .answer-option {
+    @apply w-full p-4 text-left rounded-xl border-2 transition-all duration-200;
+    border-color: hsl(var(--border));
+    background: hsl(var(--card));
+  }
+
+  .answer-option:hover {
+    border-color: hsl(var(--quiz-teal-light));
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .answer-option.selected {
+    border-color: hsl(var(--quiz-gold));
+    background: linear-gradient(135deg, hsl(45 100% 97%) 0%, hsl(45 100% 95%) 100%);
+    box-shadow: 0 0 0 3px hsl(var(--quiz-gold) / 0.2);
+  }
+
+  .answer-option.correct {
+    border-color: hsl(142 76% 36%);
+    background: linear-gradient(135deg, hsl(142 76% 97%) 0%, hsl(142 76% 95%) 100%);
+  }
+
+  .answer-option.incorrect {
+    border-color: hsl(0 84% 60%);
+    background: linear-gradient(135deg, hsl(0 84% 97%) 0%, hsl(0 84% 95%) 100%);
+  }
+
+  .quiz-button {
+    @apply px-8 py-3 rounded-xl font-medium transition-all duration-200;
+    background: hsl(var(--quiz-teal));
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-button);
+  }
+
+  .quiz-button:hover {
+    background: hsl(var(--quiz-teal-light));
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  .quiz-button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+    transform: none;
+  }
+
+  .quiz-button-outline {
+    @apply px-8 py-3 rounded-xl font-medium transition-all duration-200 border-2;
+    border-color: hsl(var(--quiz-teal));
+    color: hsl(var(--quiz-teal));
+    background: transparent;
+  }
+
+  .quiz-button-outline:hover {
+    background: hsl(var(--quiz-teal) / 0.05);
+  }
+
+  .progress-bar {
+    @apply h-2 rounded-full overflow-hidden;
+    background: hsl(var(--secondary));
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-500;
+    background: linear-gradient(90deg, hsl(var(--quiz-teal)) 0%, hsl(var(--quiz-teal-light)) 100%);
+  }
+
+  .score-display {
+    @apply text-7xl md:text-9xl font-bold;
+    color: hsl(var(--quiz-teal));
+    font-family: 'Libre Baskerville', serif;
+  }
+
+  .score-percent {
+    @apply text-3xl md:text-5xl;
+    color: hsl(var(--quiz-teal-light));
+    font-family: 'Libre Baskerville', serif;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceGentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
