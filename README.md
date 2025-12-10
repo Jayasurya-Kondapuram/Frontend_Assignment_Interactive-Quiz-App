@@ -1,73 +1,123 @@
-# Welcome to your Lovable project
+# Test Your Knowledge - Interactive Quiz App
 
-## Project info
+A pixel-perfect implementation of a quiz application based on the provided Figma design, built as a Frontend Developer Intern assignment.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Live Demo
 
-## How can I edit this code?
+[View Live Demo](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID)
 
-There are several ways of editing your application.
+## 📋 Tech Stack
 
-**Use Lovable**
+- **React 18** with TypeScript
+- **Tailwind CSS** for styling
+- **Framer Motion** for smooth animations
+- **Vite** for fast development and build
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## ✨ Key Features Implemented
 
-Changes made via Lovable will be committed automatically to this repo.
+### Core Functionality
+- **Start Screen**: Welcome page with quiz overview and total question count
+- **Question Flow**: Sequential question display with multiple choice answers
+- **Progress Tracking**: Visual progress bar showing quiz completion
+- **Results Screen**: Final score display with percentage and restart option
 
-**Use your preferred IDE**
+### Design Accuracy
+- Pixel-perfect matching of Figma specifications
+- Custom color palette (teal primary, golden accents)
+- Elegant typography using Libre Baskerville (serif) and Poppins (sans-serif)
+- Responsive card-based layout
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Animations & Interactions
+- Smooth page transitions using Framer Motion
+- Hover effects on answer options with subtle lift
+- Selected state styling with golden border
+- Score reveal animation on results page
+- Scale and fade animations throughout
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Accessibility (WCAG 2.1)
+- Semantic HTML structure with proper heading hierarchy
+- ARIA labels and roles for interactive elements
+- Keyboard navigation support
+- Focus management
+- Screen reader compatible progress indicators
 
-Follow these steps:
+## 🎨 Design System
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Colors
+- **Primary (Teal)**: `hsl(197, 54%, 23%)` - Main brand color
+- **Background**: `hsl(187, 33%, 94%)` - Light icy blue
+- **Accent (Gold)**: `hsl(45, 100%, 51%)` - Selection highlights
+- **Card**: Pure white with subtle shadows
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Typography
+- **Headers**: Libre Baskerville (serif with italic variant)
+- **Body**: Poppins (clean sans-serif)
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🛠 Setup Instructions
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+1. Clone the repository:
+   \`\`\`bash
+   git clone <repository-url>
+   cd <project-folder>
+   \`\`\`
 
-**Edit a file directly in GitHub**
+2. Install dependencies:
+   \`\`\`bash
+   npm install
+   \`\`\`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. Start the development server:
+   \`\`\`bash
+   npm run dev
+   \`\`\`
 
-**Use GitHub Codespaces**
+4. Open [http://localhost:8080](http://localhost:8080) in your browser
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📁 Project Structure
 
-## What technologies are used for this project?
+\`\`\`
+src/
+├── components/
+│   └── quiz/
+│       ├── Quiz.tsx           # Main quiz container with state management
+│       ├── StartScreen.tsx    # Welcome/start screen
+│       ├── QuestionScreen.tsx # Question display with options
+│       └── ResultScreen.tsx   # Final score display
+├── data/
+│   └── quizData.ts           # Quiz questions and answers
+├── pages/
+│   └── Index.tsx             # Main page component
+├── index.css                 # Global styles and design system
+└── App.tsx                   # App router configuration
+\`\`\`
 
-This project is built with:
+## 💡 Assumptions Made
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. **Question Data**: Created sample general knowledge questions for demonstration
+2. **Single Answer**: Each question has only one correct answer
+3. **Desktop Focus**: Optimized for desktop as per assignment requirements
+4. **No Backend**: Quiz data is stored locally (no persistence)
 
-## How can I deploy this project?
+## ⏱ Time Spent
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- Design system setup: ~30 minutes
+- Component development: ~1.5 hours
+- Animations & polish: ~45 minutes
+- Accessibility improvements: ~30 minutes
+- Testing & refinements: ~15 minutes
 
-## Can I connect a custom domain to my Lovable project?
+**Total: ~3 hours**
 
-Yes, you can!
+## 🔧 Available Scripts
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- \`npm run dev\` - Start development server
+- \`npm run build\` - Build for production
+- \`npm run preview\` - Preview production build
+- \`npm run lint\` - Run ESLint
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📝 Notes
+
+- Built with Lovable (AI-powered development platform)
+- Uses React Router for potential future page navigation
+- Follows component-based architecture for maintainability
+- All colors use HSL format for consistency
