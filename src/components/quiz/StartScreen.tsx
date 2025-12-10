@@ -30,7 +30,6 @@ const StartScreen = ({ onStart, totalQuestions }: StartScreenProps) => {
       >
         <p className="text-sm text-muted-foreground font-sans">Total Questions</p>
         <p className="text-5xl font-bold text-primary font-serif mt-1">{totalQuestions}</p>
-        <p className="text-sm text-muted-foreground font-sans mt-3">Answer all the questions to see the results</p>
       </motion.div>
 
       <div>
