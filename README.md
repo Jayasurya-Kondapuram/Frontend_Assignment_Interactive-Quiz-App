@@ -2,10 +2,6 @@
 
 A pixel-perfect implementation of a quiz application based on the provided Figma design, built as a Frontend Developer Intern assignment.
 
-## 🚀 Live Demo
-
-[View Live Demo](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID)
-
 ## 📋 Tech Stack
 
 - **React 18** with TypeScript
