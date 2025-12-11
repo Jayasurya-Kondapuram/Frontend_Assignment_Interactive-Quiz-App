@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import catPaw from "@/assets/cat-paw.png";
 
 interface StartScreenProps {
   onStart: () => void;
@@ -47,24 +46,6 @@ const StartScreen = ({ onStart, totalQuestions }: StartScreenProps) => {
           Start Quiz
         </motion.button>
       </div>
-
-      {/* Cat paw animation */}
-      <motion.img
-        src={catPaw}
-        alt="Cute cat paw"
-        className="absolute bottom-0 left-8 w-24 h-auto"
-        initial={{ y: 100 }}
-        animate={{ y: 0 }}
-        transition={{ 
-          delay: 0.5, 
-          duration: 0.6, 
-          type: "spring",
-          stiffness: 200
-        }}
-        style={{ 
-          animation: "wave 1.5s ease-in-out infinite",
-        }}
-      />
     </motion.div>
   );
 };
