@@ -106,18 +106,4 @@ src/
 - Accessibility improvements: ~30 minutes
 - Testing & refinements: ~15 minutes
 
-**Total: ~3 hours**
 
-## 🔧 Available Scripts
-
-- \`npm run dev\` - Start development server
-- \`npm run build\` - Build for production
-- \`npm run preview\` - Preview production build
-- \`npm run lint\` - Run ESLint
-
-## 📝 Notes
-
-- Built with Lovable (AI-powered development platform)
-- Uses React Router for potential future page navigation
-- Follows component-based architecture for maintainability
-- All colors use HSL format for consistency
