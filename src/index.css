@@ -5,8 +5,12 @@
 @layer base {
   :root {
     /* Quiz App Design System */
-    --background: 187 33% 94%;
+    --background: 0 0% 100%;
     --foreground: 197 54% 23%;
+    
+    /* Background gradient colors */
+    --bg-white: 0 0% 100%;
+    --bg-light-blue: 195 100% 95%;
 
     --card: 0 0% 100%;
     --card-foreground: 197 54% 23%;
@@ -110,8 +114,8 @@
 
 @layer components {
   .quiz-container {
-    @apply min-h-screen flex items-center justify-center p-4;
-    background: linear-gradient(135deg, hsl(var(--quiz-bg)) 0%, hsl(187 40% 90%) 100%);
+    @apply min-h-screen flex items-center justify-center p-4 relative overflow-hidden;
+    background: linear-gradient(180deg, hsl(var(--bg-white)) 0%, hsl(var(--bg-light-blue)) 100%);
   }
 
   .quiz-card {
@@ -266,5 +270,14 @@
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
   }
 }
